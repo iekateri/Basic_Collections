@@ -5,9 +5,7 @@ def get_input_parameters():
     :return: например: abccba
     :rtype: str
     """
-    # TODO: в этой функции пишем весь необходимый код для
-    #  получения входных параметров.
-    #  Логику расчётов тут не программируем
+    return input("Введите слово: ")
     pass
 
 
@@ -18,9 +16,10 @@ def display_result(is_palindrome):
     :param is_palindrome: является ли палиндромом, например: True
     :type is_palindrome: bool
     """
-    # TODO: в этой функции пишем весь необходимый код
-    #  для вывода результата в нужном формате.
-    #  Логику расчётов тут не программируем
+    if is_palindrome:
+        print("Слово является палиндромом")
+    else:
+        print("Слово не является палиндромом")
     pass
 
 
@@ -34,12 +33,14 @@ def check_palindrome(word):
     :return: является ли слово палиндром, например: True
     :rtype: bool
     """
-    # TODO: в этой функции пишем логику проверки строки на палиндром.
-    #  print'ов и input'ов тут не должно быть.
-    #  Функция на вход принимает ранее полученные данные
-    #  (из функции get_input_parameters).
-    #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
+    reverce_word = ""
+    for num in range(len(word)):
+        reverce_word += word[len(word) - 1 - num]
+    if reverce_word == word:
+        check = True
+    else:
+        check = False
+    return check
     pass
 
 
