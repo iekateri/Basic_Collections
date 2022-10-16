@@ -5,9 +5,15 @@ def get_input_parameters():
     :return: например: [3, [1, 4, -3, 0, 10]]
     :rtype: List[int, List[int]]
     """
+    list = []
+    shift = int(input("Сдвиг: "))
+    for _ in range(int(input("Введите количество элементов: "))):
+        list.append(int(input("Изначальный список: ")))
+
     # TODO: в этой функции пишем весь необходимый код для
     #  получения входных параметров.
     #  Логику расчётов тут не программируем
+    return (shift, list)
     pass
 
 
@@ -18,9 +24,7 @@ def display_result(shifted_list):
     :param shifted_list: сдвинутый список, например: [5, 1, 2, 3, 4]
     :type shifted_list: List[int]
     """
-    # TODO: в этой функции пишем весь необходимый код
-    #  для вывода результата в нужном формате.
-    #  Логику расчётов тут не программируем
+    print("Сдвинутый список: ", shifted_list)
     pass
 
 
@@ -36,12 +40,10 @@ def shift_list(shift, original_list):
     :return: сдвинутый список, например: [5, 1, 2, 3, 4]
     :rtype: List[int]
     """
-    # TODO: в этой функции пишем логику сдвига списка вправо на shift элементов.
-    #  print'ов и input'ов тут не должно быть.
-    #  Функция на вход принимает ранее полученные данные
-    #  (из функции get_input_parameters).
-    #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
+    new_list = []
+    for item in range(len(original_list)):
+      new_list.append(original_list[item - shift])
+    return(new_list)
     pass
 
 
